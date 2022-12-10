@@ -1,23 +1,23 @@
 console.log("hello World");
 // Variables
-const popArt = document.querySelector("aside");
+const popUp = document.querySelector("aside");
 const article = document.querySelector("article");
 const discordYes = document.querySelector(".discord__yes");
 const discordNo = document.querySelector(".discord__no");
 
 // Functions
-const showPopArt = () => {
+const showPopUp = () => {
   setTimeout(() => {
-    popArt.classList.remove("hidden");
+    popUp.classList.remove("hidden");
     article.classList.add("blur");
   }, 5000);
 };
-const hidePopArt = () => {
-  popArt.classList.add("hidden");
+const hidePopUp = () => {
+  popUp.classList.add("hidden");
   article.classList.remove("blur");
 };
 // AddEventListeners
-discordYes.addEventListener("click", hidePopArt);
-discordNo.addEventListener("click", hidePopArt);
+discordYes.addEventListener("click", hidePopUp);
+discordNo.addEventListener("click", hidePopUp);
 // Play
-showPopArt();
+showPopUp();

@@ -152,8 +152,10 @@ aside p {
 }
 .discord__yes {
   background-color: green;
+  cursor: pointer;
 }
 .discord__no {
   background-color: red;
   margin-top: 10px;
+  cursor: pointer;
 }
