@@ -76,5 +76,5 @@ for (i = 0; i < nav.length - 1; i++) {
   });
 }
 // Play
-showPopUp();
+// showPopUp();
 reset();
