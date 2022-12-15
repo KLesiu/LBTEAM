@@ -73,42 +73,48 @@ const modal = (squadPage = {}) => {
       <ul>
         <li>
           <h4>${squadPage.nickName}</h4>
-          <div class="members__socials">${squadPage.firstSocial || ""}</div>
-          <div class="members__socials">${squadPage.secondSocial || ""}</div>
-          <div class="members__socials">${squadPage.thirdSocial || ""}</div>
+          <div class="members__socials">${squadPage.firstSocial || "s"}</div>
+          <div class="members__socials">${squadPage.secondSocial || "s"}</div>
+          <div class="members__socials">${squadPage.thirdSocial || "s"}</div>
         </li>
       </ul>
       <div class="ranks">
         <a
           title="Riot Games (Q1060165), Public domain, via Wikimedia Commons"
           href="https://commons.wikimedia.org/wiki/File:League_of_Legends_2019_vector.svg"
-          ><img
+          ><img style="margin-top: 30px;
+          padding: 20px;"
             width="256"
             alt="League of Legends 2019 vector"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/League_of_Legends_2019_vector.svg/256px-League_of_Legends_2019_vector.svg.png"
         /></a>
-        <div>${squadPage.roleLol || ""}</div>
-        <div>${squadPage.mainLol || ""}</div>
-        <div>${squadPage.rankLol || ""}</div>
+        <div class="hidden">${squadPage.roleLol || ""}</div>
+    
+        <div class="hidden">${squadPage.rankLol || ""}</div>
       </div>
       <div class="ranks">
         <a
           title="by GeMet, with help from Sertion., Public domain, via Wikimedia Commons"
           href="https://commons.wikimedia.org/wiki/File:Counter-Strike_Global_Offensive.svg"
-          target="_blank"
-          ><img
+          target="_blank" style="width:50%"
+          ><img 
             style="
+            margin-top: 30px;
+            padding: 20px;
               background-color: rgba(194, 155, 59, 255);
               padding: 30px;
               border-radius: 20px;
+              width:100%;
             "
             width="256"
             alt="Counter-Strike Global Offensive"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Counter-Strike_Global_Offensive.svg/256px-Counter-Strike_Global_Offensive.svg.png"
         /></a>
-        <div>${squadPage.weaponCsgo || ""}</div>
-        <div>${squadPage.mapCsgo || ""}</div>
-        <div>${squadPage.rankCsgo || ""}</div>
+       
+        <div class="hiddejn" style="width: 40%;">${
+          squadPage.rankCsgo || ""
+        }</div>
+        
       </div>
     </div>
   </div>`;
@@ -122,7 +128,9 @@ const createSquadMembers = (value) => {
 const create = () => {
   createSquadMembers({
     nickName: "Zugi",
-    roleLol: `<img src=img/sup.png />`,
+    roleLol: `<img  src=img/sup.png />`,
+    rankLol: `<img  src=img/bronze.png />`,
+    rankCsgo: `<img  src=img/mg1.png />`,
   });
 };
 // AddEventListeners
