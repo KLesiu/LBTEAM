@@ -7,6 +7,7 @@ const discordNo = document.querySelector(".discord__no");
 const main = document.querySelectorAll("main");
 const nav = document.querySelectorAll("nav div");
 const logo = document.querySelector(".logo__img");
+const squadPage = document.querySelector(".squad__page");
 // Functions
 const showPopUp = () => {
   setTimeout(() => {
@@ -64,6 +65,66 @@ const reset = () => {
     main[0].classList.remove("hidden");
   });
 };
+const modal = (squadPage = {}) => {
+  return `<h2>Squad</h2>
+  <div class="squad__members">
+    <h3>Założyciel</h3>
+    <div class="members__holder gold">
+      <ul>
+        <li>
+          <h4>${squadPage.nickName}</h4>
+          <div class="members__socials">${squadPage.firstSocial || ""}</div>
+          <div class="members__socials">${squadPage.secondSocial || ""}</div>
+          <div class="members__socials">${squadPage.thirdSocial || ""}</div>
+        </li>
+      </ul>
+      <div class="ranks">
+        <a
+          title="Riot Games (Q1060165), Public domain, via Wikimedia Commons"
+          href="https://commons.wikimedia.org/wiki/File:League_of_Legends_2019_vector.svg"
+          ><img
+            width="256"
+            alt="League of Legends 2019 vector"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/League_of_Legends_2019_vector.svg/256px-League_of_Legends_2019_vector.svg.png"
+        /></a>
+        <div>${squadPage.roleLol || ""}</div>
+        <div>${squadPage.mainLol || ""}</div>
+        <div>${squadPage.rankLol || ""}</div>
+      </div>
+      <div class="ranks">
+        <a
+          title="by GeMet, with help from Sertion., Public domain, via Wikimedia Commons"
+          href="https://commons.wikimedia.org/wiki/File:Counter-Strike_Global_Offensive.svg"
+          target="_blank"
+          ><img
+            style="
+              background-color: rgba(194, 155, 59, 255);
+              padding: 30px;
+              border-radius: 20px;
+            "
+            width="256"
+            alt="Counter-Strike Global Offensive"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Counter-Strike_Global_Offensive.svg/256px-Counter-Strike_Global_Offensive.svg.png"
+        /></a>
+        <div>${squadPage.weaponCsgo || ""}</div>
+        <div>${squadPage.mapCsgo || ""}</div>
+        <div>${squadPage.rankCsgo || ""}</div>
+      </div>
+    </div>
+  </div>`;
+};
+const createSquadMembers = (value) => {
+  const squadContainer = document.createElement("div");
+  squadContainer.className = "container";
+  squadContainer.innerHTML = modal(value);
+  squadPage.appendChild(squadContainer);
+};
+const create = () => {
+  createSquadMembers({
+    nickName: "Zugi",
+    roleLol: `<img src=img/sup.png />`,
+  });
+};
 // AddEventListeners
 discordYes.addEventListener("click", hidePopUp);
 discordNo.addEventListener("click", hidePopUp);
@@ -78,3 +139,4 @@ for (i = 0; i < nav.length - 1; i++) {
 // Play
 // showPopUp();
 reset();
+create();
