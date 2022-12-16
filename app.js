@@ -9,6 +9,9 @@ const nav = document.querySelectorAll("nav div");
 const logo = document.querySelector(".logo__img");
 const squadPage = document.querySelector(".squad__page");
 const leftArrow = document.querySelector(".left");
+const rightArrow = document.querySelector(".right");
+const squadContainer = document.createElement("div");
+let members = 0;
 
 // Functions
 const showPopUp = () => {
@@ -70,7 +73,7 @@ const reset = () => {
 const modal = (squadPage = {}) => {
   return `<h2>Squad</h2>
   <div class="squad__members">
-    <h3>Założyciel</h3>
+    <h3>LBTEAM</h3>
     <div class="members__holder gold">
       <ul>
         <li>
@@ -125,21 +128,33 @@ const modal = (squadPage = {}) => {
   `;
 };
 const createSquadMembers = (value) => {
-  const squadContainer = document.createElement("div");
   squadContainer.className = "container";
   squadContainer.innerHTML = modal(value);
   squadPage.appendChild(squadContainer);
 };
 const create = () => {
-  createSquadMembers({
-    nickName: "ZUGI",
-    firstSocial: "<i class='icon-instagram'></i>",
-    secondSocial: "<i class='icon-snapchat'></i>",
-    thirdSocial: "<i class='icon-note'></i>",
-    roleLol: `<img  src=img/sup.png />`,
-    rankLol: `<img  src=img/bronze.png />`,
-    rankCsgo: `<img  src=img/mg1.png />`,
-  });
+  if (members == 1) {
+    createSquadMembers({
+      nickName: "ZUGI",
+      firstSocial: "<i class='icon-instagram'></i>",
+      secondSocial: "<i class='icon-snapchat'></i>",
+      thirdSocial: "<i class='icon-note'></i>",
+      roleLol: `<img  src=img/sup.png />`,
+      rankLol: `<img  src=img/bronze.png />`,
+      rankCsgo: `<img  src=img/mg1.png />`,
+    });
+  }
+  if (members == 2) {
+    createSquadMembers({
+      nickName: "LESIUUU",
+      firstSocial: "<i class='icon-github-squared'></i>",
+      secondSocial: "<i class='icon-steam-squared'></i>",
+      thirdSocial: `?`,
+      roleLol: `<img  src=img/top.png />`,
+      rankLol: `<img  src=img/silver.png />`,
+      rankCsgo: ``,
+    });
+  }
   const showRanks = () => {
     const showLolRanks = document.querySelector(".lol");
     const showCsgoRank = document.querySelector(".csgo");
@@ -147,10 +162,12 @@ const create = () => {
       const showLOL = document.querySelectorAll(".showLOL");
       showLOL[0].classList.toggle("hidden");
       showLOL[1].classList.toggle("hidden");
+      showCsgoRank.classList.toggle("opacity");
     });
     showCsgoRank.addEventListener("click", () => {
       const showCSGO = document.querySelector(".showCSGO");
       showCSGO.classList.toggle("hidden");
+      showLolRanks.classList.toggle("opacity");
     });
   };
   showRanks();
@@ -167,8 +184,25 @@ for (i = 0; i < nav.length - 1; i++) {
     autoReset();
   });
 }
+rightArrow.addEventListener("click", () => {
+  if (members < 10) {
+    members += 1;
+  } else {
+    members = 0;
+  }
+  console.log(members);
 
+  create();
+});
+leftArrow.addEventListener("click", () => {
+  if (members < 10 && members > 0) {
+    members -= 1;
+  } else {
+    members = 0;
+  }
+  console.log(members);
+  create();
+});
 // Play
 // showPopUp();
 reset();
-create();
