@@ -8,6 +8,8 @@ const main = document.querySelectorAll("main");
 const nav = document.querySelectorAll("nav div");
 const logo = document.querySelector(".logo__img");
 const squadPage = document.querySelector(".squad__page");
+const leftArrow = document.querySelector(".left");
+
 // Functions
 const showPopUp = () => {
   setTimeout(() => {
@@ -73,51 +75,54 @@ const modal = (squadPage = {}) => {
       <ul>
         <li>
           <h4>${squadPage.nickName}</h4>
-          <div class="members__socials">${squadPage.firstSocial || "s"}</div>
-          <div class="members__socials">${squadPage.secondSocial || "s"}</div>
-          <div class="members__socials">${squadPage.thirdSocial || "s"}</div>
+          <div class="members__socials">${
+            squadPage.firstSocial || "<i class='icon-instagram'></i>"
+          }</div>
+          <div class="members__socials">${
+            squadPage.secondSocial || "<i class='icon-snapchat'></i>"
+          }</div>
+          <div class="members__socials">${
+            squadPage.thirdSocial || "<i class='icon-note'></i>"
+          }</div>
         </li>
       </ul>
       <div class="ranks">
-        <a
+        <a class="lol"
           title="Riot Games (Q1060165), Public domain, via Wikimedia Commons"
-          href="https://commons.wikimedia.org/wiki/File:League_of_Legends_2019_vector.svg"
+          
           ><img style="margin-top: 30px;
           padding: 20px;"
             width="256"
             alt="League of Legends 2019 vector"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/League_of_Legends_2019_vector.svg/256px-League_of_Legends_2019_vector.svg.png"
         /></a>
-        <div class="hidden">${squadPage.roleLol || ""}</div>
-    
-        <div class="hidden">${squadPage.rankLol || ""}</div>
-      </div>
-      <div class="ranks">
         <a
-          title="by GeMet, with help from Sertion., Public domain, via Wikimedia Commons"
-          href="https://commons.wikimedia.org/wiki/File:Counter-Strike_Global_Offensive.svg"
-          target="_blank" style="width:50%"
-          ><img 
-            style="
-            margin-top: 30px;
-            padding: 20px;
-              background-color: rgba(194, 155, 59, 255);
-              padding: 30px;
-              border-radius: 20px;
-              width:100%;
-            "
-            width="256"
-            alt="Counter-Strike Global Offensive"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Counter-Strike_Global_Offensive.svg/256px-Counter-Strike_Global_Offensive.svg.png"
-        /></a>
-       
-        <div class="hiddejn" style="width: 40%;">${
+        class="csgo"
+        title="by GeMet, with help from Sertion., Public domain, via Wikimedia Commons"
+        style="width:50%"
+        ><img 
+          style="
+          margin-top: 30px;
+          padding: 20px;
+            background-color: rgba(194, 155, 59, 255);
+            padding: 30px;
+            border-radius: 20px;
+            width:90%;
+          "
+          width="256"
+          alt="Counter-Strike Global Offensive"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Counter-Strike_Global_Offensive.svg/256px-Counter-Strike_Global_Offensive.svg.png"
+      /></a>
+        <div class="showLOL hidden">${squadPage.roleLol || ""}</div>
+    
+        <div class="showLOL hidden">${squadPage.rankLol || ""}</div>
+        <div class="showCSGO hidden" style="width: 40%;">${
           squadPage.rankCsgo || ""
         }</div>
-        
       </div>
     </div>
-  </div>`;
+  </div>
+  `;
 };
 const createSquadMembers = (value) => {
   const squadContainer = document.createElement("div");
@@ -127,12 +132,30 @@ const createSquadMembers = (value) => {
 };
 const create = () => {
   createSquadMembers({
-    nickName: "Zugi",
+    nickName: "ZUGI",
+    firstSocial: "<i class='icon-instagram'></i>",
+    secondSocial: "<i class='icon-snapchat'></i>",
+    thirdSocial: "<i class='icon-note'></i>",
     roleLol: `<img  src=img/sup.png />`,
     rankLol: `<img  src=img/bronze.png />`,
     rankCsgo: `<img  src=img/mg1.png />`,
   });
+  const showRanks = () => {
+    const showLolRanks = document.querySelector(".lol");
+    const showCsgoRank = document.querySelector(".csgo");
+    showLolRanks.addEventListener("click", () => {
+      const showLOL = document.querySelectorAll(".showLOL");
+      showLOL[0].classList.toggle("hidden");
+      showLOL[1].classList.toggle("hidden");
+    });
+    showCsgoRank.addEventListener("click", () => {
+      const showCSGO = document.querySelector(".showCSGO");
+      showCSGO.classList.toggle("hidden");
+    });
+  };
+  showRanks();
 };
+
 // AddEventListeners
 discordYes.addEventListener("click", hidePopUp);
 discordNo.addEventListener("click", hidePopUp);
@@ -144,6 +167,7 @@ for (i = 0; i < nav.length - 1; i++) {
     autoReset();
   });
 }
+
 // Play
 // showPopUp();
 reset();
