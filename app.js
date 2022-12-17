@@ -304,5 +304,5 @@ gallery.addEventListener("click", () => {
   alert("Wkrótce dostępne");
 });
 // Play
-showPopUp();
+// showPopUp();
 reset();

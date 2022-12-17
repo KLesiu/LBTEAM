@@ -4,7 +4,7 @@
   --blueShadow-: 0 0 10px 5px rgb(16, 93, 129);
   --darkShadow-: 0 0 10px 5px rgb(12, 12, 12);
   --h2Size-: 12px;
-  --containerBC-: rgba(4, 28, 59, 0.541);
+  --containerBC-: rgba(4, 28, 59, 0.705);
   --membersContainerBC-: rgba(4, 28, 59, 0.815);
   --backgroundColor-: rgb(16, 93, 129);
   --backgroundColorHover-: rgb(58, 158, 204);
@@ -39,38 +39,48 @@ article {
     rgba(15, 15, 15, 0.959) 0%,
     rgba(0, 0, 0, 0.959) 47%
   );
-
+  display: flex;
+  flex-wrap: wrap;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 header {
-  min-height: 300px;
+  width: 90%;
+  min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 h1 {
   font-size: var(--h1Size-);
 }
 header img {
-  height: 300px;
+  height: 250px;
   filter: drop-shadow(0px 0px 8px grey);
   cursor: pointer;
 }
 .line {
-  min-height: 5px;
+  width: 90%;
+  height: 1px;
   box-shadow: var(--blueShadow-);
   background-color: var(--backgroundColor-);
   border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 nav {
+  width: 90%;
   min-height: 50px;
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
   justify-content: space-around;
   font-size: var(--h2Size-);
+  margin-left: auto;
+  margin-right: auto;
 }
 nav div {
   width: 20%;
@@ -94,25 +104,46 @@ nav div:hover {
 main {
   margin-top: 50px;
   min-height: 800px;
-  box-shadow: var(--blueShadow-);
+  display: flex;
+  justify-content: space-around;
   border-radius: 10px;
-  width: 80%;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
+.main__page .container h2 {
+  text-shadow: 0px 0px 15px rgb(129, 129, 129);
+}
+.aside {
+  width: 25%;
+  box-shadow: var(--blueShadow-);
+  background-color: var(--containerBC-);
+  border-radius: 10px;
+}
 .container {
   font-family: "Bree Serif";
-  width: 100%;
+  width: 65%;
   height: 850px;
   font-size: var(--h1Size-);
   background-color: var(--containerBC-);
+  box-shadow: var(--blueShadow-);
   /* display: flex;
   justify-content: center;
   flex-wrap: wrap; */
   /* align-items: center; */
   border-radius: 10px;
   text-align: center;
-  padding: 5%;
+  padding: 2%;
+}
+.news {
+  width: 90%;
+  min-height: 40%;
+  border: 1px solid rgb(170, 170, 170);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 .squad__members {
   width: 100%;
@@ -211,12 +242,14 @@ main {
 }
 
 footer {
-  width: 100%;
+  width: 90%;
   min-height: 150px;
   margin-top: 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
 }
 .footer h2 {
   text-align: center;
