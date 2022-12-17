@@ -1,6 +1,7 @@
 console.log("hello World");
 // Variables
 const popUp = document.querySelector("aside");
+const body = document.querySelector("body");
 const article = document.querySelector("article");
 const discordYes = document.querySelector(".discord__yes");
 const discordNo = document.querySelector(".discord__no");
@@ -11,6 +12,7 @@ const squadPage = document.querySelector(".squad__page");
 const leftArrow = document.querySelector(".left");
 const rightArrow = document.querySelector(".right");
 const squadContainer = document.createElement("div");
+const gallery = document.querySelector(".gallery");
 let members = 0;
 
 // Functions
@@ -18,11 +20,14 @@ const showPopUp = () => {
   setTimeout(() => {
     popUp.classList.remove("hidden");
     article.classList.add("blur");
+    body.classList.add("overflow");
+    window.scrollTo(0, 0);
   }, 5000);
 };
 const hidePopUp = () => {
   popUp.classList.add("hidden");
   article.classList.remove("blur");
+  body.classList.remove("overflow");
 };
 const changePage = () => {
   for (i = 0; i < nav.length - 1; i++) {
@@ -133,26 +138,88 @@ const createSquadMembers = (value) => {
   squadPage.appendChild(squadContainer);
 };
 const create = () => {
-  if (members == 1) {
+  if (members == 0) {
     createSquadMembers({
       nickName: "ZUGI",
       firstSocial: "<i class='icon-instagram'></i>",
       secondSocial: "<i class='icon-snapchat'></i>",
-      thirdSocial: "<i class='icon-note'></i>",
-      roleLol: `<img  src=img/sup.png />`,
+      thirdSocial:
+        "<a href='https://www.tiktok.com/@x_dawid1337_x' target='_blank'><i class='icon-note'></i></a>",
+      roleLol: `<img  src=img/jgl.png />`,
       rankLol: `<img  src=img/bronze.png />`,
-      rankCsgo: `<img  src=img/mg1.png />`,
+      rankCsgo: `<img  src=img/dmg.png />`,
     });
-  }
-  if (members == 2) {
+  } else if (members == 1) {
     createSquadMembers({
       nickName: "LESIUUU",
-      firstSocial: "<i class='icon-github-squared'></i>",
-      secondSocial: "<i class='icon-steam-squared'></i>",
+      firstSocial:
+        "<a target='_blank' href='https://github.com/KLesiu'><i class='icon-github-squared'></i></a>",
+      secondSocial:
+        "<a href='https://steamcommunity.com/id/lesiu123/' target='_blank'><i class='icon-steam-squared'></i></a>",
       thirdSocial: `?`,
       roleLol: `<img  src=img/top.png />`,
       rankLol: `<img  src=img/silver.png />`,
-      rankCsgo: ``,
+      rankCsgo: `<img src=img/le.png />`,
+    });
+  } else if (members == 2) {
+    createSquadMembers({
+      nickName: "VARKUS",
+      firstSocial: "?",
+      secondSocial: "?",
+      thirdSocial: `?`,
+      roleLol: `<img  src=img/top.png />`,
+      rankLol: `<img  src=img/gold.png />`,
+      rankCsgo: `<img src=img/lem.png />`,
+    });
+  } else if (members == 3) {
+    createSquadMembers({
+      nickName: "Chulbull",
+      firstSocial: "?",
+      secondSocial: "?",
+      thirdSocial: `?`,
+      roleLol: `<img  src=img/mid.png />`,
+      rankLol: `<img  src=img/silver.png />`,
+      rankCsgo: `<img src=img/dmg.png />`,
+    });
+  } else if (members == 4) {
+    createSquadMembers({
+      nickName: "R3IO",
+      firstSocial: "?",
+      secondSocial: "?",
+      thirdSocial: `?`,
+      roleLol: `<img src=img/adc.png />`,
+      rankLol: `<img src=img/bronze.png />`,
+      rankCsgo: `<img src=img/dmg.png />`,
+    });
+  } else if (members == 5) {
+    createSquadMembers({
+      nickName: "M4KOWSKI",
+      firstSocial: "?",
+      secondSocial: "?",
+      thirdSocial: `?`,
+      roleLol: `<img  src=img/mid.png />`,
+      rankLol: `<img  src=img/silver.png />`,
+      rankCsgo: `<img src=img/dmg.png />`,
+    });
+  } else if (members == 6) {
+    createSquadMembers({
+      nickName: "SINEQ",
+      firstSocial: "?",
+      secondSocial: "?",
+      thirdSocial: `?`,
+      roleLol: `<img src=img/adc.png />`,
+      rankLol: `?`,
+      rankCsgo: `<img src=img/dmg.png />`,
+    });
+  } else if (members == 7) {
+    createSquadMembers({
+      nickName: "G3ZM0",
+      firstSocial: "?",
+      secondSocial: "?",
+      thirdSocial: `?`,
+      roleLol: `<img src=img/adc.png />`,
+      rankLol: `<img src=img/bronze.png />`,
+      rankCsgo: `<img src=img/lem.png />`,
     });
   }
   const showRanks = () => {
@@ -185,7 +252,7 @@ for (i = 0; i < nav.length - 1; i++) {
   });
 }
 rightArrow.addEventListener("click", () => {
-  if (members < 10) {
+  if (members < 7) {
     members += 1;
   } else {
     members = 0;
@@ -195,14 +262,47 @@ rightArrow.addEventListener("click", () => {
   create();
 });
 leftArrow.addEventListener("click", () => {
-  if (members < 10 && members > 0) {
+  if (members < 7 && members > 0) {
     members -= 1;
+  } else if (members == 0) {
+    members = 7;
   } else {
     members = 0;
   }
   console.log(members);
   create();
 });
+nav[1].addEventListener("click", () => {
+  createSquadMembers({
+    nickName: "ZUGI",
+    firstSocial: "<i class='icon-instagram'></i>",
+    secondSocial: "<i class='icon-snapchat'></i>",
+    thirdSocial:
+      "<a href='https://www.tiktok.com/@x_dawid1337_x' target='_blank'><i class='icon-note'></i></a>",
+    roleLol: `<img  src=img/jgl.png />`,
+    rankLol: `<img  src=img/bronze.png />`,
+    rankCsgo: `<img  src=img/dmg.png />`,
+  });
+  const showRanks = () => {
+    const showLolRanks = document.querySelector(".lol");
+    const showCsgoRank = document.querySelector(".csgo");
+    showLolRanks.addEventListener("click", () => {
+      const showLOL = document.querySelectorAll(".showLOL");
+      showLOL[0].classList.toggle("hidden");
+      showLOL[1].classList.toggle("hidden");
+      showCsgoRank.classList.toggle("opacity");
+    });
+    showCsgoRank.addEventListener("click", () => {
+      const showCSGO = document.querySelector(".showCSGO");
+      showCSGO.classList.toggle("hidden");
+      showLolRanks.classList.toggle("opacity");
+    });
+  };
+  showRanks();
+});
+gallery.addEventListener("click", () => {
+  alert("Wkrótce dostępne");
+});
 // Play
-// showPopUp();
+showPopUp();
 reset();

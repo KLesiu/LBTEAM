@@ -101,6 +101,7 @@ main {
   margin-left: auto;
 }
 .container {
+  font-family: "Bree Serif";
   width: 100%;
   height: 850px;
   font-size: var(--h1Size-);
@@ -237,9 +238,10 @@ footer {
   display: none;
 }
 aside {
+  font-family: "Bree Serif";
   position: absolute;
   z-index: 1;
-  top: 40vh;
+  top: 0;
   left: 25vw;
   background-color: var(--navBackgroundColor-);
   border: rgb(6, 41, 87) 15px solid;
@@ -258,6 +260,9 @@ aside p {
 .blur {
   filter: blur(10px);
 }
+.overflow {
+  overflow: hidden;
+}
 .discord__link {
   text-decoration: none;
 }
@@ -269,4 +274,9 @@ aside p {
   background-color: red;
   margin-top: 10px;
   cursor: pointer;
+}
+.ranking__page img {
+  -webkit-box-shadow: 8px 8px 19px -1px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 19px -1px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 19px -1px rgba(66, 68, 90, 1);
 }
