@@ -124,6 +124,7 @@ main {
 }
 .aside {
   width: 25%;
+  height: 850px;
   box-shadow: var(--blueShadow-);
   background-color: var(--containerBC-);
   border-radius: 10px;
@@ -152,6 +153,9 @@ main {
   margin-top: 40px;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+.squad__page {
+  animation: appearance 2s ease-in;
 }
 .squad__members {
   width: 100%;
