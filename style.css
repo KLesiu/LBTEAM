@@ -427,6 +427,7 @@ footer {
   margin-top: auto;
   margin-bottom: auto;
   height: 400px;
+  animation: appearance 3s ease-in;
 }
 .aside__squad ul {
   list-style-type: none;
