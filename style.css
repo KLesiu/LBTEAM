@@ -293,9 +293,10 @@ main {
 }
 .members__holder {
   background-color: var(--membersContainerBC-);
-  padding: 5%;
+  padding: 0 10% 2% 10%;
   border-radius: 5%;
   margin-bottom: 50px;
+  position: relative;
 }
 .members__socials {
   width: 10%;
@@ -473,4 +474,18 @@ aside p {
 .aside__discord {
   width: 80%;
   height: 20%;
+}
+.show__more-games {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  height: 10%;
+  cursor: pointer;
+  background-color: rgb(145, 122, 19);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Bree Serif";
 }

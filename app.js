@@ -95,6 +95,9 @@ const modal = (squadPage = {}) => {
           }</div>
         </li>
       </ul>
+      <button title="Pokaż gry, w które gra ${
+        squadPage.nickName
+      }"class="show__more-games"> Pokaż więcej gier </button>
       <div class="ranks">
         <a class="lol"
           title="Riot Games (Q1060165), Public domain, via Wikimedia Commons"
@@ -107,7 +110,7 @@ const modal = (squadPage = {}) => {
         /></a>
         <a
         class="csgo"
-        title="by GeMet, with help from Sertion., Public domain, via Wikimedia Commons"
+        title="by GeMet, with help from Sertion., Public domain, via Wikimedia Commons"
         style="width:50%"
         ><img 
           style="
