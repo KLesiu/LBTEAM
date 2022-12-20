@@ -12,6 +12,7 @@ const squadPage = document.querySelector(".squad__page");
 const leftArrow = document.querySelector(".left");
 const rightArrow = document.querySelector(".right");
 const squadContainer = document.createElement("div");
+const squadAside = document.createElement("div");
 const gallery = document.querySelector(".gallery");
 
 let members = 0;
@@ -134,12 +135,46 @@ const modal = (squadPage = {}) => {
       </div>
     </div>
   </div>
+  
   `;
+};
+const modalAside = (squadPage = {}) => {
+  return `<h2>GIERKI</h2> <ul>
+       <li>${squadPage.firstGame || ""}</li>
+      <li>${squadPage.secondGame || ""}</li>
+       <li>${squadPage.thirdGame || ""}</li>
+       <li>${squadPage.fourthGame || ""}</li>
+       <li>${squadPage.fifthGame || ""}</li>
+       <li>${squadPage.sixthGame || ""}</li>
+       <li>${squadPage.seventhGame || ""}</li>
+      <li>${squadPage.eighthGame || ""}</li>
+       <li>${squadPage.ninthGame || ""}</li>
+       <li>${squadPage.tenthGame || ""}</li>
+
+       </ul>`;
 };
 const createSquadMembers = (value) => {
   squadContainer.className = "container";
   squadContainer.innerHTML = modal(value);
+  squadAside.className = "aside";
+  squadAside.classList.add("aside__squad");
+  squadAside.classList.add("hidden");
+  leftArrow.setAttribute("style", "left:20%");
+  rightArrow.setAttribute("style", "right:20%");
+  squadAside.innerHTML = modalAside(value);
   squadPage.appendChild(squadContainer);
+  squadPage.appendChild(squadAside);
+  const showMoreGames = document.querySelector(".show__more-games");
+  showMoreGames.addEventListener("click", () => {
+    squadAside.classList.toggle("hidden");
+    if (squadAside.classList.contains("hidden")) {
+      leftArrow.setAttribute("style", "left:20%");
+      rightArrow.setAttribute("style", "right:20%");
+    } else {
+      leftArrow.setAttribute("style", "left:7%");
+      rightArrow.setAttribute("style", "right:34%");
+    }
+  });
 };
 const create = () => {
   if (members == 0) {
@@ -152,6 +187,14 @@ const create = () => {
       roleLol: `<img  src=img/jgl.png />`,
       rankLol: `<img  src=img/bronze.png />`,
       rankCsgo: `<img  src=img/dmg.png />`,
+      firstGame: `Counter Strike Global Offensive`,
+      secondGame: `League Of Legends`,
+      thirdGame: `Minecraft`,
+      fourthGame: `Rocket League`,
+      fifthGame: `Among Us`,
+      sixthGame: `GTA V`,
+      seventhGame: `Shakes & Fidget`,
+      eighthGame: `Valorant`,
     });
   } else if (members == 1) {
     createSquadMembers({
@@ -164,6 +207,10 @@ const create = () => {
       roleLol: `<img  src=img/top.png />`,
       rankLol: `<img  src=img/silver.png />`,
       rankCsgo: `<img src=img/le.png />`,
+      firstGame: `Counter Strike Global Offensive`,
+      secondGame: `League Of Legends`,
+      thirdGame: `Among Us`,
+      fourthGame: `Rocket League`,
     });
   } else if (members == 2) {
     createSquadMembers({
@@ -174,6 +221,13 @@ const create = () => {
       roleLol: `<img  src=img/top.png />`,
       rankLol: `<img  src=img/gold.png />`,
       rankCsgo: `<img src=img/lem.png />`,
+      firstGame: `Counter Strike Global Offensive`,
+      secondGame: `League Of Legends`,
+      thirdGame: `Minecraft`,
+      fourthGame: `Rocket League`,
+      fifthGame: `Among Us`,
+      sixthGame: `GTA V`,
+      seventhGame: `Valorant`,
     });
   } else if (members == 3) {
     createSquadMembers({
@@ -184,6 +238,12 @@ const create = () => {
       roleLol: `<img  src=img/mid.png />`,
       rankLol: `<img  src=img/silver.png />`,
       rankCsgo: `<img src=img/dmg.png />`,
+      firstGame: `Counter Strike Global Offensive`,
+      secondGame: `League Of Legends`,
+      thirdGame: `Fifa`,
+      fourthGame: `Among Us`,
+      fifthGame: `GTA V`,
+      sixthGame: `Valorant`,
     });
   } else if (members == 4) {
     createSquadMembers({
@@ -194,6 +254,15 @@ const create = () => {
       roleLol: `<img src=img/adc.png />`,
       rankLol: `<img src=img/bronze.png />`,
       rankCsgo: `<img src=img/dmg.png />`,
+      firstGame: `Counter Strike Global Offensive`,
+      secondGame: `League Of Legends`,
+      thirdGame: `Fifa`,
+      fourthGame: `Rocket League`,
+      fifthGame: `Among Us`,
+      sixthGame: `GTA V`,
+      seventhGame: `Shakes & Fidget`,
+      eighthGame: `Valorant`,
+      ninthGame: `Minecraft`,
     });
   } else if (members == 5) {
     createSquadMembers({
@@ -204,6 +273,14 @@ const create = () => {
       roleLol: `<img  src=img/mid.png />`,
       rankLol: `<img  src=img/silver.png />`,
       rankCsgo: `<img src=img/dmg.png />`,
+      firstGame: `Counter Strike Global Offensive`,
+      secondGame: `League Of Legends`,
+      thirdGame: `Minecaft`,
+      fourthGame: `Rocket League`,
+      fifthGame: `Among Us`,
+      sixthGame: `GTA V`,
+      seventhGame: `Shakes & Fidget`,
+      eighthGame: `Valorant`,
     });
   } else if (members == 6) {
     createSquadMembers({
@@ -214,6 +291,13 @@ const create = () => {
       roleLol: `<img src=img/adc.png />`,
       rankLol: `?`,
       rankCsgo: `<img src=img/dmg.png />`,
+      firstGame: `Counter Strike Global Offensive`,
+      secondGame: `League Of Legends`,
+      thirdGame: `Minecaft`,
+      fourthGame: `Valorant`,
+      fifthGame: `Among Us`,
+      sixthGame: `GTA V`,
+      seventhGame: `Shakes & Fidget`,
     });
   } else if (members == 7) {
     createSquadMembers({
@@ -224,6 +308,14 @@ const create = () => {
       roleLol: `<img src=img/adc.png />`,
       rankLol: `<img src=img/bronze.png />`,
       rankCsgo: `<img src=img/lem.png />`,
+      firstGame: `Counter Strike Global Offensive`,
+      secondGame: `League Of Legends`,
+      thirdGame: `Minecaft`,
+      fourthGame: `Rocket League`,
+      fifthGame: `Among Us`,
+      sixthGame: `GTA V`,
+      seventhGame: `Shakes & Fidget`,
+      eighthGame: `Valorant`,
     });
   }
   const showRanks = () => {
@@ -307,6 +399,14 @@ nav[1].addEventListener("click", () => {
     roleLol: `<img  src=img/jgl.png />`,
     rankLol: `<img  src=img/bronze.png />`,
     rankCsgo: `<img  src=img/dmg.png />`,
+    firstGame: `Counter Strike Global Offensive`,
+    secondGame: `League Of Legends`,
+    thirdGame: `Minecraft`,
+    fourthGame: `Rocket League`,
+    fifthGame: `Among Us`,
+    sixthGame: `GTA V`,
+    seventhGame: `Shakes & Fidget`,
+    eighthGame: `Valorant`,
   });
 
   const showRanks = () => {
