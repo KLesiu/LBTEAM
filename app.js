@@ -14,17 +14,36 @@ const rightArrow = document.querySelector(".right");
 const squadContainer = document.createElement("div");
 const squadAside = document.createElement("div");
 const gallery = document.querySelector(".gallery");
+const flakeImages = [`img/flake1.png`, `img/flake2.png`, `img/flake3.png`];
 
 let members = 0;
 
 // Functions
+function renderSnowContainer() {
+  const snowContainer = document.createElement("div");
+  snowContainer.id = "snow__container";
+  article.appendChild(snowContainer);
+  return snowContainer;
+}
+function renderFlake(snowContainer) {
+  const flakeContainer = document.createElement("div");
+  flakeContainer.classList.add("flakes__container");
+  flakeContainer.style.left = `${Math.random() * 100}%`;
+  flakeContainer.style.transform = `scale(${Math.random()})`;
+  const flake = document.createElement("img");
+  flake.src = flakeImages[Math.floor(Math.random() * flakeImages.length)];
+  flakeContainer.appendChild(flake);
+  snowContainer.appendChild(flakeContainer);
+  setTimeout(renderFlake, 500, snowContainer);
+}
+const snowContainerVar = renderSnowContainer();
 const showPopUp = () => {
   setTimeout(() => {
     popUp.classList.remove("hidden");
     article.classList.add("blur");
     body.classList.add("overflow");
     window.scrollTo(0, 0);
-  }, 5000);
+  }, 15000);
 };
 const hidePopUp = () => {
   popUp.classList.add("hidden");
@@ -451,5 +470,6 @@ gallery.addEventListener("click", () => {
   alert("Wkrótce dostępne");
 });
 // Play
+renderFlake(snowContainerVar);
 showPopUp();
 reset();
