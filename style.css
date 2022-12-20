@@ -391,9 +391,14 @@ footer {
   background-color: var(--containerBC-);
   box-shadow: var(--blueShadow-);
   border-radius: 10px;
+  padding: 10px;
+  font-size: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 .social img {
-  width: 20%;
+  width: 6%;
   height: 100%;
 }
 .social__header {
@@ -401,6 +406,16 @@ footer {
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 5px;
+}
+.social__discord,
+.social__tiktok {
+  width: 5%;
+  height: 100%;
+}
+.social__discord img,
+.social__tiktok img {
+  width: 100%;
+  height: 100%;
 }
 .hidden {
   display: none;
@@ -420,7 +435,7 @@ aside {
   text-align: center;
 }
 aside p {
-  margin-top: 170px;
+  margin-top: 20%;
   text-align: center;
   font-size: 40px;
   font-weight: 700;
@@ -437,14 +452,20 @@ aside p {
 .discord__yes {
   background-color: green;
   cursor: pointer;
+  border-radius: 2%;
 }
 .discord__no {
   background-color: red;
   margin-top: 10px;
   cursor: pointer;
+  border-radius: 2%;
 }
 .ranking__page img {
   -webkit-box-shadow: 8px 8px 19px -1px rgba(66, 68, 90, 1);
   -moz-box-shadow: 8px 8px 19px -1px rgba(66, 68, 90, 1);
   box-shadow: 8px 8px 19px -1px rgba(66, 68, 90, 1);
+}
+.aside__discord {
+  width: 80%;
+  height: 20%;
 }
