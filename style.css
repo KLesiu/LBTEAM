@@ -132,7 +132,7 @@ main {
   color: black;
   border-top: 5px solid rgb(61, 4, 4);
   border-bottom: 5px solid rgb(61, 4, 4);
-  border-radius: 10%;
+  border-radius: 10px;
 }
 .aside {
   width: 25%;
@@ -336,6 +336,7 @@ main {
 .showCSGO {
   animation: appearance 2s ease-in;
 }
+
 .opacity {
   opacity: 0.2;
 }
@@ -353,6 +354,10 @@ main {
   width: 100%;
   height: 80%;
   cursor: pointer;
+}
+.showLOL img,
+.showCSGO img {
+  cursor: auto;
 }
 .left,
 .right {

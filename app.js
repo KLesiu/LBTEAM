@@ -13,6 +13,7 @@ const leftArrow = document.querySelector(".left");
 const rightArrow = document.querySelector(".right");
 const squadContainer = document.createElement("div");
 const gallery = document.querySelector(".gallery");
+
 let members = 0;
 
 // Functions
@@ -227,14 +228,35 @@ const create = () => {
     const showCsgoRank = document.querySelector(".csgo");
     showLolRanks.addEventListener("click", () => {
       const showLOL = document.querySelectorAll(".showLOL");
+      const showCSGO = document.querySelector(".showCSGO");
       showLOL[0].classList.toggle("hidden");
       showLOL[1].classList.toggle("hidden");
-      showCsgoRank.classList.toggle("opacity");
+      showCSGO.classList.add("hidden");
+      showLolRanks.classList.remove("opacity");
+      showCsgoRank.classList.add("opacity");
+      if (
+        showCSGO.classList.contains("hidden") &&
+        showLOL[0].classList.contains("hidden")
+      ) {
+        showCsgoRank.classList.remove("opacity");
+        showLolRanks.classList.remove("opacity");
+      }
     });
     showCsgoRank.addEventListener("click", () => {
+      const showLOL = document.querySelectorAll(".showLOL");
       const showCSGO = document.querySelector(".showCSGO");
       showCSGO.classList.toggle("hidden");
-      showLolRanks.classList.toggle("opacity");
+      showLOL[0].classList.add("hidden");
+      showLOL[1].classList.add("hidden");
+      showLolRanks.classList.add("opacity");
+      showCsgoRank.classList.remove("opacity");
+      if (
+        showCSGO.classList.contains("hidden") &&
+        showLOL[0].classList.contains("hidden")
+      ) {
+        showCsgoRank.classList.remove("opacity");
+        showLolRanks.classList.remove("opacity");
+      }
     });
   };
   showRanks();
@@ -283,19 +305,41 @@ nav[1].addEventListener("click", () => {
     rankLol: `<img  src=img/bronze.png />`,
     rankCsgo: `<img  src=img/dmg.png />`,
   });
+
   const showRanks = () => {
     const showLolRanks = document.querySelector(".lol");
     const showCsgoRank = document.querySelector(".csgo");
     showLolRanks.addEventListener("click", () => {
       const showLOL = document.querySelectorAll(".showLOL");
+      const showCSGO = document.querySelector(".showCSGO");
       showLOL[0].classList.toggle("hidden");
       showLOL[1].classList.toggle("hidden");
-      showCsgoRank.classList.toggle("opacity");
+      showCSGO.classList.add("hidden");
+      showLolRanks.classList.remove("opacity");
+      showCsgoRank.classList.add("opacity");
+      if (
+        showCSGO.classList.contains("hidden") &&
+        showLOL[0].classList.contains("hidden")
+      ) {
+        showCsgoRank.classList.remove("opacity");
+        showLolRanks.classList.remove("opacity");
+      }
     });
     showCsgoRank.addEventListener("click", () => {
+      const showLOL = document.querySelectorAll(".showLOL");
       const showCSGO = document.querySelector(".showCSGO");
       showCSGO.classList.toggle("hidden");
-      showLolRanks.classList.toggle("opacity");
+      showLOL[0].classList.add("hidden");
+      showLOL[1].classList.add("hidden");
+      showLolRanks.classList.add("opacity");
+      showCsgoRank.classList.remove("opacity");
+      if (
+        showCSGO.classList.contains("hidden") &&
+        showLOL[0].classList.contains("hidden")
+      ) {
+        showCsgoRank.classList.remove("opacity");
+        showLolRanks.classList.remove("opacity");
+      }
     });
   };
   showRanks();
