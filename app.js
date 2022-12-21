@@ -470,6 +470,6 @@ gallery.addEventListener("click", () => {
   alert("Wkrótce dostępne");
 });
 // Play
-// renderFlake(snowContainerVar);
+renderFlake(snowContainerVar);
 showPopUp();
 reset();

@@ -119,6 +119,7 @@ header {
   height: 50px;
   align-self: flex-start;
   left: 90%;
+  margin-top: 20px;
   background-color: var(--containerBC-);
   box-shadow: var(--blueShadow-);
   border-radius: 10px;
