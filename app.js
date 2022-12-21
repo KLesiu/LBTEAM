@@ -34,7 +34,7 @@ function renderFlake(snowContainer) {
   flake.src = flakeImages[Math.floor(Math.random() * flakeImages.length)];
   flakeContainer.appendChild(flake);
   snowContainer.appendChild(flakeContainer);
-  setTimeout(renderFlake, 500, snowContainer);
+  setTimeout(renderFlake, 1000, snowContainer);
 }
 const snowContainerVar = renderSnowContainer();
 const showPopUp = () => {

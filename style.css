@@ -430,6 +430,7 @@ main {
   font-size: 45px;
   border-radius: 100%;
   cursor: pointer;
+  z-index: 2;
 }
 .left {
   left: 20%;
@@ -477,7 +478,7 @@ footer {
 }
 .social__discord,
 .social__tiktok {
-  width: 50px;
+  width: 42px;
   height: 100%;
 }
 .social__discord img,
