@@ -91,11 +91,6 @@ body {
 article {
   width: 100%;
   height: 100%;
-  /* background-image: radial-gradient(
-    circle,
-    rgba(15, 15, 15, 0.959) 0%,
-    rgba(0, 0, 0, 0.959) 47%
-  ); */
   background-image: radial-gradient(
     circle,
     rgba(15, 15, 15, 0.959) 0%,
@@ -117,6 +112,21 @@ header {
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
+}
+.offSnow {
+  position: absolute;
+  width: 5%;
+  height: 50px;
+  align-self: flex-start;
+  left: 90%;
+  background-color: var(--containerBC-);
+  box-shadow: var(--blueShadow-);
+  border-radius: 10px;
+  font-family: "Bree Serif";
+  cursor: pointer;
+}
+.offSnow:hover {
+  background-color: var(--backgroundColorHover-);
 }
 h1 {
   font-size: var(--h1Size-);
