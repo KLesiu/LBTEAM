@@ -16,6 +16,7 @@ const squadAside = document.createElement("div");
 const gallery = document.querySelector(".gallery");
 const flakeImages = [`img/flake1.png`, `img/flake2.png`, `img/flake3.png`];
 const offSnowButton = document.querySelector(".offSnow");
+const historyButton = document.querySelector(".p__holder");
 
 let members = 0;
 
@@ -485,6 +486,11 @@ offSnowButton.addEventListener("click", () => {
   } else {
     window.setInterval(location.reload(true), x);
   }
+});
+historyButton.addEventListener("click", () => {
+  main[0].classList.add("hidden");
+  main[1].classList.remove("hidden");
+  nav[0].classList.add("active");
 });
 // Play
 
