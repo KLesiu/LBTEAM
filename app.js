@@ -15,6 +15,7 @@ const squadContainer = document.createElement("div");
 const squadAside = document.createElement("div");
 const gallery = document.querySelector(".gallery");
 const flakeImages = [`img/flake1.png`, `img/flake2.png`, `img/flake3.png`];
+const offSnowButton = document.querySelector(".offSnow");
 
 let members = 0;
 
@@ -29,7 +30,7 @@ function renderFlake(snowContainer) {
   const flakeContainer = document.createElement("div");
   flakeContainer.classList.add("flakes__container");
   flakeContainer.style.left = `${Math.random() * 100}%`;
-  flakeContainer.style.transform = `scale(${Math.random()})`;
+  flakeContainer.style.transform = `scale(${Math.random() / 2})`;
   const flake = document.createElement("img");
   flake.src = flakeImages[Math.floor(Math.random() * flakeImages.length)];
   flakeContainer.appendChild(flake);
@@ -469,7 +470,16 @@ nav[1].addEventListener("click", () => {
 gallery.addEventListener("click", () => {
   alert("Wkrótce dostępne");
 });
+offSnowButton.addEventListener("click", () => {
+  offSnowButton.classList.toggle("active");
+  if (offSnowButton.classList.contains("active")) {
+    renderFlake(snowContainerVar);
+    offSnowButton.innerHTML = "Wyłącz śnieg";
+  } else {
+    window.setInterval(location.reload(true), x);
+  }
+});
 // Play
-renderFlake(snowContainerVar);
+
 showPopUp();
 reset();

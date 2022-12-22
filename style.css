@@ -222,9 +222,10 @@ main {
 }
 .tiktok__image {
   margin-top: 15px;
-  box-shadow: var(--blueShadow-);
+  filter: drop-shadow(0 0px 10px rgb(16, 93, 129));
   opacity: 0.6;
   height: 200px;
+  width: 80%;
 }
 .tiktok__image:hover {
   opacity: 1;
@@ -579,4 +580,8 @@ aside p {
   justify-content: center;
   align-items: center;
   font-family: "Bree Serif";
+  transition: all 0.5s ease-in-out;
+}
+.show__more-games:hover {
+  transform: scale(1.1);
 }
