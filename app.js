@@ -42,7 +42,9 @@ const snowContainerVar = renderSnowContainer();
 function addAudioElement(snowContainer) {
   const audioElement = document.createElement("audio");
   audioElement.src = `jinglebells.mp3`;
+  audioElement.volume = 0.05;
   audioElement.play();
+
   snowContainer.appendChild(audioElement);
 }
 const showPopUp = () => {
@@ -419,8 +421,9 @@ leftArrow.addEventListener("click", () => {
 nav[1].addEventListener("click", () => {
   createSquadMembers({
     nickName: "ZUGI",
-    firstSocial: "<i class='icon-instagram'></i>",
-    secondSocial: "<i class='icon-snapchat'></i>",
+    firstSocial:
+      "<a href='https://www.instagram.com/dawid_ehh/' target='_blank' ><i class='icon-instagram'></i></a>",
+    secondSocial: "<i title='dawidgoodboyxd' class='icon-snapchat'></i>",
     thirdSocial:
       "<a href='https://www.tiktok.com/@x_dawid1337_x' target='_blank'><i class='icon-note'></i></a>",
     roleLol: `<img  src=img/jgl.png />`,
