@@ -38,6 +38,12 @@ function renderFlake(snowContainer) {
   setTimeout(renderFlake, 1000, snowContainer);
 }
 const snowContainerVar = renderSnowContainer();
+function addAudioElement(snowContainer) {
+  const audioElement = document.createElement("audio");
+  audioElement.src = `jinglebells.mp3`;
+  audioElement.play();
+  snowContainer.appendChild(audioElement);
+}
 const showPopUp = () => {
   setTimeout(() => {
     popUp.classList.remove("hidden");
@@ -474,6 +480,7 @@ offSnowButton.addEventListener("click", () => {
   offSnowButton.classList.toggle("active");
   if (offSnowButton.classList.contains("active")) {
     renderFlake(snowContainerVar);
+    addAudioElement(snowContainerVar);
     offSnowButton.innerHTML = "Wyłącz śnieg";
   } else {
     window.setInterval(location.reload(true), x);
