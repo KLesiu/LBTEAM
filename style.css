@@ -605,3 +605,102 @@ aside p {
 .show__more-games:hover {
   transform: scale(1.1);
 }
+
+/* MOBILE */
+@media only screen and (max-width: 500px) {
+  .offSnow {
+    position: absolute;
+    width: 13%;
+    height: 50px;
+    align-self: flex-start;
+    left: 80%;
+    margin-top: 20px;
+    background-color: var(--containerBC-);
+    box-shadow: var(--blueShadow-);
+    border-radius: 10px;
+    font-family: "Bree Serif";
+    cursor: pointer;
+  }
+  nav {
+    width: 90%;
+    min-height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-around;
+    font-size: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+  }
+  nav div {
+    width: 30%;
+    height: 50px;
+    box-shadow: var(--blueShadow-);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--navBackgroundColor-);
+    font-weight: 700;
+    border: solid 1px rgba(18, 71, 141, 0.651);
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+  }
+  main {
+    flex-wrap: wrap;
+  }
+  .aside {
+    width: 91%;
+    height: 850px;
+    padding: 10px;
+    box-shadow: var(--blueShadow-);
+    background-color: var(--containerBC-);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    font-family: "Bree Serif";
+    z-index: 1;
+    margin-top: 20px;
+  }
+  .container {
+    font-family: "Bree Serif";
+    width: 91%;
+    height: 760px;
+    font-size: var(--h1Size-);
+    background-color: var(--containerBC-);
+    box-shadow: var(--blueShadow-);
+    z-index: 1;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2%;
+  }
+  .news__baner {
+    width: 100%;
+  }
+  aside {
+    font-family: "Bree Serif";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 6vw;
+    background-color: var(--navBackgroundColor-);
+    border: rgb(6, 41, 87) 15px solid;
+    border-radius: 10%;
+    padding: 5%;
+    width: 88%;
+    height: 35%;
+    text-align: center;
+  }
+  .news p {
+    width: 100%;
+    font-size: 13px;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+}
