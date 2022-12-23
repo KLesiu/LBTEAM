@@ -250,7 +250,7 @@ const create = () => {
     });
   } else if (members == 3) {
     createSquadMembers({
-      nickName: "Chulbull",
+      nickName: "Chulbul",
       firstSocial: "?",
       secondSocial: "?",
       thirdSocial: `?`,
