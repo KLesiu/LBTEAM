@@ -107,7 +107,7 @@ const reset = () => {
   });
 };
 const modal = (squadPage = {}) => {
-  return `<h2>Squad</h2>
+  return `<h2 class="squad__h2">Squad</h2>
   <div class="squad__members">
     <h3>LBTEAM</h3>
     <div class="members__holder gold">
@@ -132,8 +132,7 @@ const modal = (squadPage = {}) => {
         <a class="lol"
           title="Riot Games (Q1060165), Public domain, via Wikimedia Commons"
           
-          ><img style="margin-top: 30px;
-          padding: 20px;"
+          ><img class="lol__img" 
             width="256"
             alt="League of Legends 2019 vector"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/League_of_Legends_2019_vector.svg/256px-League_of_Legends_2019_vector.svg.png"
@@ -142,15 +141,8 @@ const modal = (squadPage = {}) => {
         class="csgo"
         title="by GeMet, with help from Sertion., Public domain, via Wikimedia Commons"
         style="width:50%"
-        ><img 
-          style="
-          margin-top: 30px;
-          padding: 20px;
-            background-color: rgba(194, 155, 59, 255);
-            padding: 30px;
-            border-radius: 20px;
-            width:90%;
-          "
+        ><img class="csgo__img"
+          
           width="256"
           alt="Counter-Strike Global Offensive"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Counter-Strike_Global_Offensive.svg/256px-Counter-Strike_Global_Offensive.svg.png"
