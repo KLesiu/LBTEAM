@@ -133,7 +133,7 @@ const modal = (squadPage = {}) => {
           title="Riot Games (Q1060165), Public domain, via Wikimedia Commons"
           
           ><img class="lol__img" 
-            width="256"
+            width="180"
             alt="League of Legends 2019 vector"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/League_of_Legends_2019_vector.svg/256px-League_of_Legends_2019_vector.svg.png"
         /></a>
@@ -143,16 +143,14 @@ const modal = (squadPage = {}) => {
         style="width:50%"
         ><img class="csgo__img"
           
-          width="256"
+          
           alt="Counter-Strike Global Offensive"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Counter-Strike_Global_Offensive.svg/256px-Counter-Strike_Global_Offensive.svg.png"
       /></a>
         <div class="showLOL hidden">${squadPage.roleLol || ""}</div>
     
         <div class="showLOL hidden">${squadPage.rankLol || ""}</div>
-        <div class="showCSGO hidden" style="width: 40%;">${
-          squadPage.rankCsgo || ""
-        }</div>
+        <div class="showCSGO hidden" >${squadPage.rankCsgo || ""}</div>
       </div>
     </div>
   </div>

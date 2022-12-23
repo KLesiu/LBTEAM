@@ -435,8 +435,8 @@ main {
 }
 .ranks div {
   border-bottom: 2px solid var(--textColor-);
-  width: 18%;
-  height: 98px;
+  width: 29%;
+  height: 84px;
   margin-top: 30px;
   border-radius: 10%;
 }
@@ -666,14 +666,14 @@ aside p {
   }
   .aside {
     width: 91%;
-    height: 850px;
+    height: 442px;
     padding: 10px;
     box-shadow: var(--blueShadow-);
     background-color: var(--containerBC-);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: center;
     font-family: "Bree Serif";
     z-index: 1;
@@ -766,9 +766,9 @@ aside p {
   }
   .ranks div {
     border-bottom: 2px solid var(--textColor-);
-    width: 30%;
-    height: 98px;
-    margin-top: 30px;
+    width: 34%;
+    height: 60px;
+    margin-top: 5px;
     border-radius: 10%;
   }
   .left,
