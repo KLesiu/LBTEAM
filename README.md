@@ -1,8 +1,6 @@
 # LBTEAM
 ## You can see it here: https://lbteam.ml/
 This is my favourite project. I created a page for my team!
-## Work-time
-15 days
 ## New skills:
 - How to add music to the page
 - New CSS animation's properties
